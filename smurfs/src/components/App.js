@@ -22,21 +22,12 @@ function App(props) {
       height: newSmurfHeight,
     });
   }, [inputText, newSmurfHeight, newSmurfAge]);
+  useEffect(() => {
+    props.fetchData();
+  }, []);
   console.log("new obj after pasing is", newSmurfObj);
   return (
     <div className="App notification is-bold margin-fixer">
-      <h1>Smurf. Gurf.</h1>
-      <div>Welcome to our 'secure database'</div>
-      <div>You may begin browsing</div>{" "}
-      <button
-        className="button is-primary"
-        onClick={() => {
-          props.fetchData();
-        }}
-      >
-        GET SMURFS
-      </button>
-      <br />
       <div className="newSmurfContainer">
         <p className="title is-2">Add-A-Smurf</p>
         <p className="subtitle is-5">
