@@ -83,7 +83,7 @@ function App(props) {
           <br />
         </form>
       </div>
-      <label>
+      {/* <label>
         Look up smurf <input></input>
       </label>
       <button
@@ -94,8 +94,8 @@ function App(props) {
         }}
       >
         Clear Search{" "}
-      </button>
-      <div>List Of All Known Smurfs:</div>
+      </button> */}
+      <div className="title">List Of All Known Smurfs:</div>
       <br />
       <div className="fetchedSmurfs">
         {props.smurfs.length > 0 ? (
@@ -119,6 +119,9 @@ function App(props) {
         ) : (
           <h4>Press 'Get Smurfs' to retrieve a list of smurfs</h4>
         )}
+        {props.smurfs.length === 0 ? (
+          <h4>Database is currently empty. Please add more smurfs!</h4>
+        ) : null}
       </div>
     </div>
   );

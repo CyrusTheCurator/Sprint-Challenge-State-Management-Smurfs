@@ -10,9 +10,10 @@
   height: 20vh;
   width: 40vw;
   margin: auto;
-  background-color: gray;
+  background-color: hsla(182, 100%, 13%, 0.753);
   padding: 10px;
   margin-bottom: 5vh;
+  color: white;
 }
 
 .smurfContainer,
@@ -21,9 +22,13 @@ button {
   align-self: flex-end;
 }
 
-.smurfContainer,
-p,
-titleis-5 {
-  margin-bottom: 0;
-  align-self: center;
+.newSmurfContainer {
+  margin: 5vh 10px 8vh 10px;
+}
+
+.fetchedSmurfs {
+  background-color: hsla(180, 100%, 31%, 0.45);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 5vh;
 }
