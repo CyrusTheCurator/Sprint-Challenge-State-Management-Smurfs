@@ -38,9 +38,15 @@ function App(props) {
       </button>
       <br />
       <div className="newSmurfContainer">
+        <p className="title is-2">Add-A-Smurf</p>
+        <p className="subtitle is-5">
+          Fill out the form below and click the post button to add your smurf to
+          the village
+        </p>
+        <br />
         <form>
           <label>
-            Enter New Smurf
+            Enter Name
             <input
               value={inputText}
               id="name"
@@ -73,6 +79,7 @@ function App(props) {
             ></input>
           </label>
           <button
+            class="button is-dark"
             onClick={(e) => {
               e.preventDefault();
               props.postData(newSmurfObj);

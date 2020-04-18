@@ -23,7 +23,7 @@ button {
 }
 
 .newSmurfContainer {
-  margin: 5vh 10px 8vh 10px;
+  margin: 5vh 10px 0vh 10px;
 }
 
 .fetchedSmurfs {
@@ -31,4 +31,34 @@ button {
   border-radius: 10px;
   padding: 25px;
   margin-bottom: 5vh;
+}
+
+.newSmurfContainer,
+form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-right: 0px;
+  width: 100%;
+}
+
+label {
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 25%;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.newSmurfContainer form label input {
+  display: inline-block;
+  float: right;
+  margin-left: 25px;
+  margin-bottom: 2vh;
+}
+
+.newSmurfContainer form button {
+  margin-top: 3vh;
+  align-self: auto;
 }
