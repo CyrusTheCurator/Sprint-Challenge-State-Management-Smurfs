@@ -1,4 +1,4 @@
-import { FETCH_DATA, DATA_SUCCESS, DATA_ERROR, POST_DATA } from "../actions";
+import { FETCH_DATA, DATA_SUCCESS, DATA_ERROR, DELETE_SMURF } from "../actions";
 const initialState = {
   smurfs: {},
   isLoading: false,
@@ -25,7 +25,6 @@ export const reducer = (state = initialState, action) => {
         isLoading: false,
         error: action.payload,
       };
-
     default:
       return state;
   }

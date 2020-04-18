@@ -49,16 +49,17 @@ export const postData = (newSmurf) => {
   };
 };
 
-export const deleteData = (smurf) => {
+export const deleteSmurf = (smurf) => {
   return (dispatch) => {
     dispatch({
       type: FETCH_DATA,
     });
     setTimeout(() => {
-      let url = `http://localhost:3333/smurfs`;
+      console.log(smurf);
+      let url = `http://localhost:3333/smurfs/${smurf}`;
 
       axios
-        .post(url, smurf)
+        .delete(url, smurf)
         .then((res) => {
           const fetchedSmurfs = res.data;
           const smurfsObj = {

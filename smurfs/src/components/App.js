@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { fetchData, postData } from "../actions/index";
+import { fetchData, postData, deleteSmurf } from "../actions/index";
 import { connect } from "react-redux";
+import "bulma/css/bulma.css";
 
 function App(props) {
   const [inputText, setInputText] = useState("");
@@ -23,11 +24,12 @@ function App(props) {
   }, [inputText, newSmurfHeight, newSmurfAge]);
   console.log("new obj after pasing is", newSmurfObj);
   return (
-    <div className="App">
+    <div className="App notification is-bold margin-fixer">
       <h1>Smurf. Gurf.</h1>
-      <div>Welcome to your flerth</div>
-      <div>Start inside of your</div>{" "}
+      <div>Welcome to our 'secure database'</div>
+      <div>You may begin browsing</div>{" "}
       <button
+        className="button is-primary"
         onClick={() => {
           props.fetchData();
         }}
@@ -93,13 +95,30 @@ function App(props) {
       >
         Clear Search{" "}
       </button>
-      <div>List Of All Known Smurfs</div>
+      <div>List Of All Known Smurfs:</div>
+      <br />
       <div className="fetchedSmurfs">
-        {props.smurfs.length > 0
-          ? props.smurfs.map((smurf) => {
-              return <div id={""}> {smurf.name} </div>;
-            })
-          : "No smurfs yet hereeee"}
+        {props.smurfs.length > 0 ? (
+          props.smurfs.map((smurf) => {
+            return (
+              <div className="smurfContainer" id={smurf.id}>
+                <p className="title is-5">Name: {smurf.name} </p>
+                <p className="title is-5">Age: {smurf.age} </p>
+                <p className="title is-5">height: {smurf.height} </p>
+                <button
+                  className="button is-danger"
+                  onClick={(e) => {
+                    props.deleteSmurf(smurf.id);
+                  }}
+                >
+                  Banish Smurf
+                </button>{" "}
+              </div>
+            );
+          })
+        ) : (
+          <h4>Press 'Get Smurfs' to retrieve a list of smurfs</h4>
+        )}
       </div>
     </div>
   );
@@ -111,4 +130,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchData, postData })(App);
+export default connect(mapStateToProps, { fetchData, postData, deleteSmurf })(
+  App
+);

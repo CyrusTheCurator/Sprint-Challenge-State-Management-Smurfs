@@ -1,7 +1,29 @@
 .App {
   text-align: center;
+  margin: 5%;
+  min-height: 80vh;
 }
 
-.newSmurfContainer {
-  margin: 10vh 10vw 10vh 10vw;
+.smurfContainer {
+  display: flex;
+  justify-content: space-around;
+  height: 20vh;
+  width: 40vw;
+  margin: auto;
+  background-color: gray;
+  padding: 10px;
+  margin-bottom: 5vh;
+}
+
+.smurfContainer,
+button {
+  height: auto;
+  align-self: flex-end;
+}
+
+.smurfContainer,
+p,
+titleis-5 {
+  margin-bottom: 0;
+  align-self: center;
 }
